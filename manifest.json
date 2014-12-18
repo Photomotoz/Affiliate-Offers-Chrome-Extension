@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Affiliate Offer Extension",
+  "version": "1.0",
+
+  "description": "Provides affiliate offer links in the Chrome new tab page.",
+
+  "permissions": [
+     "*://*.google.com/*",
+    "storage",
+    "history"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://*/*","http://*/*"],
+      "js": ["jquery.min.js","main.js"],
+      "run_at":"document_end",
+      "all_frames":false
+    }
+  ],
+  "background": {"scripts": ["background.js"], "persistent": false}
+
+}
